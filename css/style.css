@@ -1,0 +1,283 @@
+/*tùy chỉnh chung*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*thuộc tính không làm mất đi kích thước gốc*/
+}
+
+
+/*nội dung chi tiết từng phần*/
+
+
+
+/*phần slider*/
+                .slider-item {
+                    width: 100vw;
+                    height: 100vh;
+                    position: relative;
+                    /*định vị trí tuyệt đối cho tp css có thuộc tính position relative thêm vào */
+                }
+               
+                /*lớp giả pseudo tùy chỉnh mờ ảnh slider*/
+                .slider-item::before {
+                    content: "";
+                    display: block;
+                    position: absolute;/*sbsolute giúp phụ thuộc lk chặt chẻ với posion trên class slider-item*/
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.4);
+                }
+
+            /* chèn ảnh*/    
+                .add-one {
+                    background-image: url(../img/anh1.jpg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    /*thiết lập kích thước ảnh bằng kích thước gốc của hình*/
+                }
+
+                .add-two {
+                    background-image: url(../img/anh2.jpg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    /*thiết lập kích thước ảnh bằng kích thước gốc của hình*/
+                }
+
+                .add-three {
+                    background-image: url(../img/anh3.jpg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    /*thiết lập kích thước ảnh bằng kích thước gốc của hình*/
+                }
+                .add-four {
+                    background-image: url(../img/5.jpg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    /*thiết lập kích thước ảnh bằng kích thước gốc của hình*/
+                }
+
+
+            /*tùy chỉnh lại vị trí phần croll ảnh trong inspect(f12)- tùy chỉnh phần code viết sẵn trong lib*/  
+               /*phần croll ảnh lùi prev*/
+                .owl-prev{
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    /*căn chỉnh cho nút nhấn ra giữa */
+                    font-size: 60px!important;
+                    /*!important giúp tránh trùng css gốc của lib có sẵn*/
+                    color: rgb(194, 186, 186)!important;
+                } 
+             /*phần croll ảnh tới next*/
+                 .owl-next{
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    /*căn chỉnh cho nút nhấn ra giữa */
+                    font-size: 60px!important;
+                    /*!important giúp tránh trùng css gốc của lib có sẵn*/
+                    color: rgb(194, 186, 186)!important;
+                }   
+               .owl-next, .owl-prev:hover{
+                 background:none!important;
+               }
+         /*tùy chỉnh lại vị trí  ảnh con trong inspect(f12) của owl-carousel*/
+            /*mấy ảnh còn nằm dưới các ảnh lớn slider tùy chỉnh lại vị trí theo lib có sẵn*/
+                .owl-dots{
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    top: 50%;
+                    right: 30px;
+                    transform: translateY(-50%);
+
+                }
+                .owl-dot{
+                    width: 25px;
+                    height: 25px;
+                    border: 2px solid #fff!important;
+                    border-radius:50%;
+                    display: flex!important;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    margin-bottom: 5px;
+                }
+                .owl-dot span{
+                    width: 15px!important;
+                    height: 15px!important;
+                    margin: 0!important;
+                    background-color: transparent!important;/*transparent làm trong suốt màu nền*/
+
+                }
+            /*chỉnh màu chủ đạo cho owl-dot ảnh con khi click và chuyển ảnh*/
+                .owl-dot.active span{
+                    background-color: rgba(17, 102, 212, 0.644)!important;
+                }
+            
+
+            /*phần content trong slider và nav*/
+                .slider-item{
+                    display: flex;
+                    align-items: center;
+                }
+                 .thebao{
+                    max-width: 1200px;
+                    width: 100%;
+                    margin: auto;
+                    position: relative;
+                 }
+                 .slider-item-text{
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
+                 }
+                 .slider-item-text p{
+                    color: #fff!important;
+                 }
+                 .slider-item-text p button{
+                    padding: 18px 30px;
+                    background-color: rgba(47, 35, 211, 0.712);
+                    border: none;
+                    cursor: pointer;/*back hold?*/
+                    color: white;
+                    border-radius: 80px;
+                 }
+                 .slider-item-text p button:hover{
+                    background-color: rgb(214, 48, 48);
+                 }
+/*end slider*/
+
+
+/*phần nav header*/
+                header{
+                    position: fixed;/*giữ thẻ nav không bị mất khi croll tới cúi dòng*/
+                    z-index: 1000;
+                    width: 100%;
+                   
+                }
+                .thecon{
+                    display: inline-flex;
+                } 
+                .header-content{
+                    justify-content: space-between;
+                    padding: 12px 0;
+                }
+               
+                .header-nav>ul{
+                    display: flex;
+                    justify-content: space-between;
+                    height: 100%;
+                    list-style: none;
+                }
+                 a{
+                    text-decoration: none;
+                }
+                ul{
+                    list-style: none;
+                }
+                
+                .header-nav>ul>li{
+                    margin-left: 20px;
+                    padding: 6px 0;
+                   list-style: none;
+                }
+                .header-nav> ul> li:last-child a{
+                    background-color: rgba(37, 40, 214, 0.774);
+                    padding: 6px 12px;
+                    border-radius: 20px;
+                }
+                .header-nav > ul >  li a{
+                    color: rgb(231, 40, 40);
+                    font-weight: bold;  
+                    transition: all 0.3s ease;  /*hiệu ứng hover mượt hơn*/
+                }
+                .header-nav > ul > li > a:hover{
+                    color: rgba(61, 61, 218, 0.781);
+                }
+
+
+        /*menu con của list of beaches*/
+                .header-nav ul li{
+                    position: relative;
+                }
+                .menu-con{
+                    position: absolute;
+                    width: 250px;
+                    background-color: #fff;
+                    top: 40%;
+                    padding: 30px 20px;
+                    left: -10px;
+                    display: none;
+                }
+                .menu-con ul li a{
+                    color: rgba(18, 65, 196, 0.418);
+                    font-weight: normal;
+                }
+                .menu-con ul li{
+                    margin-bottom: 20px;
+                    transition: all 0.3s ease;/*tăng độ mượt khi hover*/
+                }
+                /*tạo tam giác nhỏ liên kết với list of beaches*/
+                .menu-con::before{
+                    width: 30px;
+                    height: 30px;
+                    background-color: rgba(221, 221, 221,1);
+                    position: absolute;
+                    content: "";
+                    display: block;
+                    top: -15px;
+                    left: 50px;
+                    transform: rotate(45deg);/*xoay 45 độ*/
+                    z-index: -1000;/*cho khối vừa tạo nằm ẩn dưới khối menu con*/
+                }
+                .menu-con ul li:hover >a{
+                    color: rgb(36, 9, 245);
+                }
+                .menu-con ul li:hover{
+                    padding-left: 12px;
+                }
+
+                /*hover menu con và menucha (list of beaches)*/
+                .header-nav ul li:hover .menu-con{
+                    display: block;
+                    animation: submenu 0.2s linear;/*gọi keyframe lên*/
+                }
+
+                /*Thuộc tính @keyframes dùng để điều khiển diễn biến một hoạt động của thành phần, được dùng kèm với thuộc tính animation.
+                ở đây dùng để tạo hiệu ứng xuất hiện của menucon khi hover vao thẻ menu cha list of beaches*/
+                @keyframes submenu{
+                    0% {
+                        top:100px;
+                    }
+                }
+
+/*end nav header*/
+
+
+
+  /*phan list of beaches*/
+          
+  /*list off beaches end*/
+
+
+  /*start footer*/
+       
+          
+  /*end footer*/
+
+
+
+
+
+
+
+ 
